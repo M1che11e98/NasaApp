@@ -9,7 +9,7 @@ import SwiftUI
 
 struct APODView: View {
     @ObservedObject var vm: APODViewModel
-//    @StateObject private var vm2 = LibraryViewModel()
+    //    @StateObject private var vm2 = LibraryViewModel()
     
     
     var body: some View {
@@ -18,44 +18,51 @@ struct APODView: View {
             if !vm.apod.isEmpty {
                 TabView{
                     ForEach(vm.apod) { apod in
-                        VStack(alignment: .center) {
+                        VStack(alignment: .leading) {
                             Text(apod.title)
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                                 .font(.title3)
-                                .padding(.trailing, 155)
-                                AsyncImage(url: URL(string: apod.url))
-                                { image in
-                                    image
-                                        .resizable()
-                                        .scaledToFill()
-//                                        .clipped()
-                                        .aspectRatio(1.0, contentMode: .fit)
-//                                        .frame(width: 270, height: 270)
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                Text(apod.explanation)
-                                    .font(.caption2)
-                                    .foregroundColor(.white)
-                                    .lineLimit(13)
-                                    .minimumScaleFactor(0.5)
-                                    .background(Color.black.opacity(0.5))
-                                    .padding(.trailing, 0.5)
-                                    .padding(.leading, 0.5)
-
-
+                                .padding(.all)
+                            Spacer()
+                            AsyncImage(url: URL(string: apod.url)) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .clipped()
+                                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                                //.aspectRatio(1.0, contentMode: .fit)
+//                                    .frame(height: 270)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.horizontal)
+                                
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            Spacer()
+                            Text(apod.explanation)
+                                .font(.caption2)
+                                .foregroundColor(.white)
+                                .lineLimit(13)
+                                .minimumScaleFactor(0.5)
+                                .padding(.horizontal)
+//                                .background(Color.black.opacity(0.5))
+                            
+                            
                             
                             Spacer()
-                        }
-                 
-                 
+                        } .background(.black)
+                            .cornerRadius(6)
+                            .padding(.horizontal, 3)
+                        
                     }
-                }  .tabViewStyle(.page)
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                
                 
             }
-      
+            
         }
-     
+        
         .task {
             do {
                 try await vm.getAPOD()

@@ -36,15 +36,17 @@ struct ItemsView: View {
                         VStack {
                             
                             ForEach(items) { item in
-                                if let link = item.links.first, let imageData = link.imageData {
-                                    if let image = UIImage(data: imageData) {
-                                        
-                                        Image(uiImage: image)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(maxWidth: .infinity)
-                                    }
-                                }
+//                                if let link = item.links.first, let imageData = link.imageData {
+//                                    if let image = UIImage(data: imageData) {
+//
+//                                        Image(uiImage: image)
+//                                            .resizable()
+//                                            .scaledToFill()
+//                                            .frame(maxWidth: .infinity)
+//                                    }
+//                                }
+                                ItemRow(item: item)
+                                    .padding(.horizontal, 3)
                             }
                         }
                         
@@ -74,10 +76,44 @@ struct ItemsView: View {
             }
             .navigationTitle("Pictures library")
         }
-        //        .task {
-        //            try? await vm.createNewLibrary(searchString: vm.searchText)
-        //        }
     }
+}
+
+struct ItemRow: View {
+    
+    let item: Item
+    
+    var body: some View {
+      
+        VStack(alignment: .leading) {
+                if let link = item.links.first, let imageData = link.imageData {
+                    if let image = UIImage(data: imageData) {
+                        
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(RoundedRectangle(cornerRadius: 4))
+                            .frame(maxWidth: .infinity)
+                        if let data = item.data, let firstData = data.first {
+                            Text(firstData.title)
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .padding(.top, 10)
+                            if firstData.title != firstData.description {
+                                Text(firstData.description)
+                                    .foregroundColor(.white)
+                                    .font(.caption)
+                                    .padding(.top, 10)
+                            }
+                        }
+                      
+                    }
+                }
+            } .padding()
+            .background(Color.black)
+            .cornerRadius(6)
+    }
+    
 }
 
 struct ItemsView_Previews: PreviewProvider {

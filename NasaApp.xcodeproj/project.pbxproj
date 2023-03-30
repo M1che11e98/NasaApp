@@ -73,9 +73,9 @@
 				24E7A92729CF5942007CDECF /* Info.plist */,
 				24C02D4729C9C2F900912F50 /* NasaAppApp.swift */,
 				24E7A91C29CC7C4C007CDECF /* View */,
+				24E7A92E29D61397007CDECF /* SpriteView */,
 				24E7A91D29CC7C7C007CDECF /* Model */,
 				24E7A92429CF06D5007CDECF /* ViewModel */,
-				24E7A92C29D2F131007CDECF /* AnimateGif.swift */,
 				24C02D4B29C9C2FA00912F50 /* Assets.xcassets */,
 				24C02D4D29C9C2FA00912F50 /* Preview Content */,
 			);
@@ -118,6 +118,14 @@
 				24E7A92229CF06CA007CDECF /* LibraryViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		24E7A92E29D61397007CDECF /* SpriteView */ = {
+			isa = PBXGroup;
+			children = (
+				24E7A92C29D2F131007CDECF /* AnimateGif.swift */,
+			);
+			path = SpriteView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
