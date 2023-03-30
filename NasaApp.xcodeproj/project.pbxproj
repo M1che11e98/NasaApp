@@ -19,6 +19,7 @@
 		24E7A92329CF06CA007CDECF /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7A92229CF06CA007CDECF /* LibraryViewModel.swift */; };
 		24E7A92629CF5558007CDECF /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7A92529CF5558007CDECF /* ItemsView.swift */; };
 		24E7A92929D04B72007CDECF /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7A92829D04B72007CDECF /* SearchBarView.swift */; };
+		24E7A92D29D2F131007CDECF /* AnimateGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7A92C29D2F131007CDECF /* AnimateGif.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		24E7A92529CF5558007CDECF /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		24E7A92729CF5942007CDECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		24E7A92829D04B72007CDECF /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		24E7A92C29D2F131007CDECF /* AnimateGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateGif.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				24E7A91C29CC7C4C007CDECF /* View */,
 				24E7A91D29CC7C7C007CDECF /* Model */,
 				24E7A92429CF06D5007CDECF /* ViewModel */,
+				24E7A92C29D2F131007CDECF /* AnimateGif.swift */,
 				24C02D4B29C9C2FA00912F50 /* Assets.xcassets */,
 				24C02D4D29C9C2FA00912F50 /* Preview Content */,
 			);
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24E7A92929D04B72007CDECF /* SearchBarView.swift in Sources */,
+				24E7A92D29D2F131007CDECF /* AnimateGif.swift in Sources */,
 				243D7D0429C9D04100BF0075 /* APODView.swift in Sources */,
 				24E7A92629CF5558007CDECF /* ItemsView.swift in Sources */,
 				24E7A92129CF03F3007CDECF /* LibraryModel.swift in Sources */,
@@ -253,7 +257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -307,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

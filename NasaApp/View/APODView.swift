@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct APODView: View {
-    @StateObject private var vm = APODViewModel()
+    @ObservedObject var vm: APODViewModel
 //    @StateObject private var vm2 = LibraryViewModel()
     
     
@@ -69,6 +69,6 @@ struct APODView: View {
 
 struct APODView_Previews: PreviewProvider {
     static var previews: some View {
-        APODView()
+        APODView(vm: APODViewModel())
     }
 }

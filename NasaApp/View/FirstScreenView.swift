@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FirstScreenView: View {
+    @StateObject private var vm = APODViewModel()
     var body: some View {
         NavigationStack {
             VStack {
@@ -20,11 +21,23 @@ struct FirstScreenView: View {
 //                        .frame(width: 180, height: 180)
 //                        .padding(.top, 500)
 //                        .padding(.leading, 200)
-                    APODView()
+                APODView(vm: vm)
                 //}
          
             }
+            .onChange(of: vm.selectedDate, perform: { newValue in
+                Task { @MainActor in
+                    try await vm.getAPOD()
+                }
+            })
             .navigationTitle("Pic of the Day")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    DatePicker(selection: $vm.selectedDate, in: ...Date.now, displayedComponents: .date) {
+                                    Text("Select a date")
+                                }
+                }
+            }
         }
       
     }

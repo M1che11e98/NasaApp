@@ -21,7 +21,7 @@ struct Collection: Codable {
 // MARK: - Item
 struct Item: Codable, Identifiable {
     var id: String {
-        return UUID().uuidString
+        UUID().uuidString
     }
     let data: [Datum]?
     let links: [ItemLink]
